@@ -1,0 +1,13 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+development:
+  <<: *default
+  database: url-shortener_development
+test:
+  <<: *default
+  database: url-shortener_test
+production:
+  <<: *default
+  database: url-shortener_production
