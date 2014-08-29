@@ -5,6 +5,7 @@ class UrlsController < ApplicationController
 
   def create
     @url = Url.new(url_params)
+    ShortUrl.create(@url)
     @url.save
   end
 
