@@ -9,7 +9,7 @@ feature 'User adds long url', :js do
     page.fill_in_url_field(url)
     page.submit_form
 
-    sleep 0.5
+    wait_for_ajax
     expect(page).to have_css('#shortened_url', text: Url.last.shortened)
   end
 end
