@@ -1,11 +1,17 @@
 <% if @url.valid? %>
-  $add_another = $('<a></a>').attr('id', '#add_another')
-                             .attr('href', '<%= new_url_path %>')
-                             .attr('data-remote', true)
-                             .text("<%= t('urls.add_another') %>");
+  var $add_another = $('<a></a>').attr('id', '#add_another')
+                                 .attr('href', '<%= new_url_path %>')
+                                 .attr('data-remote', true)
+                                 .text("<%= t('urls.add_another') %>"),
+      $urlTextField = $('<input></input>')
+                        .attr('readonly', 'readonly')
+                        .attr('type', 'text')
+                        .attr('value', '<%= @url.shortened %>');
 
-  $('#shortened_url').text('<%= @url.shortened %>')
+  $('#shortened_url').html($urlTextField)
                      .append($('<p></p>').html($add_another));
+
+  $urlTextField.click(function() { this.select(); });
 <% else %>
   $('.alert-box').remove();
   $('#shortened_url').prepend(
