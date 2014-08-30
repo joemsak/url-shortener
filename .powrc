@@ -1,1 +1,1 @@
-export HOSTNAME='http://localhost:3000/'
+export HOSTNAME='http://url-shortener.dev/'
