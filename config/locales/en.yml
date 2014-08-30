@@ -1,4 +1,6 @@
 en:
+  urls:
+    add_another: 'Add another'
   forms:
     buttons:
       save: 'Save'

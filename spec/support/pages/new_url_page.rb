@@ -4,7 +4,11 @@ class NewUrlPage
   include Rails.application.routes.url_helpers
 
   def visit
-    super(new_url_path)
+    super(path)
+  end
+
+  def path
+    new_url_path
   end
 
   def fill_in_url_field(url)
@@ -19,8 +23,28 @@ class NewUrlPage
     save_and_open_page
   end
 
+  def shortened_url_css
+    '#shortened_url'
+  end
+
+  def add_another_css
+    '#add_another'
+  end
+
+  def add_another_text
+    t('urls.add_another')
+  end
+
+  def shortened_url
+    url.shortened
+  end
+
   def has_shortened_url?
-    url = Url.last
     has_css?('#shortened_url', text: url.shortened)
+  end
+
+  private
+  def url
+    Url.last
   end
 end
