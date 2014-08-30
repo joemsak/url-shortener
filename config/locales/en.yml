@@ -1,6 +1,8 @@
 en:
   urls:
     add_another: 'Add another'
+    errors:
+      not_found: 'Sorry, but we could not find that URL'
   forms:
     buttons:
       save: 'Save'
