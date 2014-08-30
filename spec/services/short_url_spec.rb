@@ -3,7 +3,7 @@ require './app/services/short_url'
 describe ShortUrl do
   describe '.create' do
     it 'adds a shortened_hash to the url' do
-      url = double(:url, :long => 'http://fullurl')
+      url = double(:url, save: true, long: 'http://fullurl')
 
       allow(Digest::SHA256).to receive(:hexdigest)
         .with('http://fullurl')
