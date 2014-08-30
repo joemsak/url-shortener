@@ -3,6 +3,6 @@ class Url < ActiveRecord::Base
     format: %r{\A(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?\z}
 
   def shortened
-    ShortenedUrl.for(self)
+    ShortUrl.for(self)
   end
 end
