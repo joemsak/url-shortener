@@ -1,4 +1,9 @@
 en:
+  views:
+    urls:
+      new:
+        title: 'Shorten a URL'
+        page_title: 'Shorten Your URL!'
   urls:
     add_another: 'Add another'
     errors:
