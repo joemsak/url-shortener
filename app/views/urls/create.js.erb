@@ -1,7 +1,14 @@
-$add_another = $('<a></a>').attr('id', '#add_another')
-                           .attr('href', '<%= new_url_path %>')
-                           .attr('data-remote', true)
-                           .text("<%= t('urls.add_another') %>");
+<% if @url.valid? %>
+  $add_another = $('<a></a>').attr('id', '#add_another')
+                             .attr('href', '<%= new_url_path %>')
+                             .attr('data-remote', true)
+                             .text("<%= t('urls.add_another') %>");
 
-$('#shortened_url').text('<%= @url.shortened %>')
-                   .append($('<p></p>').html($add_another));
+  $('#shortened_url').text('<%= @url.shortened %>')
+                     .append($('<p></p>').html($add_another));
+<% else %>
+  $('.alert-box').remove();
+  $('#shortened_url').prepend(
+    '<%= escape_javascript(render 'shared/errors', record: @url) %>'
+  );
+<% end %>

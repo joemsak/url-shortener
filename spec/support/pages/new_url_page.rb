@@ -23,6 +23,18 @@ class NewUrlPage
     save_and_open_page
   end
 
+  def error_css
+    '.alert-box.alert.radius ul li'
+  end
+
+  def invalid_url_error
+    t('activerecord.errors.models.url.attributes.long.invalid')
+  end
+
+  def blank_url_error
+    t('activerecord.errors.models.url.attributes.long.blank')
+  end
+
   def form_css
     'form#new_url'
   end

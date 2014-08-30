@@ -4,3 +4,11 @@ en:
   forms:
     buttons:
       save: 'Save'
+  activerecord:
+    errors:
+      models:
+        url:
+          attributes:
+            long:
+              blank: "URL can't be blank"
+              invalid: "That doesn't look like a valid URL"
