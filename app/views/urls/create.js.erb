@@ -1,8 +1,7 @@
-$newRow = $('<div></div>').addClass('row');
 $add_another = $('<a></a>').attr('id', '#add_another')
                            .attr('href', '<%= new_url_path %>')
                            .attr('data-remote', true)
                            .text("<%= t('urls.add_another') %>");
 
 $('#shortened_url').text('<%= @url.shortened %>')
-                   .after($newRow.html($add_another));
+                   .append($('<p></p>').html($add_another));

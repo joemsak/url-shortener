@@ -23,6 +23,10 @@ class NewUrlPage
     save_and_open_page
   end
 
+  def form_css
+    'form#new_url'
+  end
+
   def shortened_url_css
     '#shortened_url'
   end
