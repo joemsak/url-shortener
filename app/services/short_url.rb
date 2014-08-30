@@ -1,6 +1,7 @@
 class ShortUrl
   def self.create(url)
     url.shortened_hash = first_five_of_sha256(url)
+    url.save
   end
 
   def self.for(url)

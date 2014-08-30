@@ -16,7 +16,6 @@ class UrlsController < ApplicationController
     @url = Url.find_or_initialize_by(long: url_params[:long])
     if @url.new_record?
       ShortUrl.create(@url)
-      @url.save
     end
   end
 
