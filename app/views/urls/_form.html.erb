@@ -1,7 +1,7 @@
 <%= form_for @url, remote: true do |f| %>
   <div class='small-12'>
     <%= f.label :long, 'Long URL' %>
-    <%= f.text_field :long %>
+    <%= f.url_field :long %>
   </div>
 
   <div class='small-12'>
