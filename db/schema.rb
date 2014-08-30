@@ -17,12 +17,12 @@ ActiveRecord::Schema.define(version: 20140829222957) do
   enable_extension "plpgsql"
 
   create_table "urls", force: true do |t|
-    t.string   "long"
-    t.string   "shortened_hash"
+    t.string   "long",           null: false
+    t.string   "shortened_hash", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "urls", ["shortened_hash"], name: "index_urls_on_shortened_hash", using: :btree
+  add_index "urls", ["long", "shortened_hash"], name: "index_urls_on_long_and_shortened_hash", unique: true, using: :btree
 
 end
