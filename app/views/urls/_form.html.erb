@@ -1,10 +1,10 @@
 <%= form_for @url, remote: true do |f| %>
-  <div class='row'>
+  <div class='small-12'>
     <%= f.label :long, 'Long URL' %>
     <%= f.text_field :long %>
   </div>
 
-  <div class='row'>
+  <div class='small-12'>
     <%= f.submit t('forms.buttons.save'), class: 'button' %>
   </div>
 <% end %>

@@ -12,10 +12,8 @@
   </head>
 
   <body>
-    <div class='row'>
-      <%= render 'shared/flash_messages' %>
-      <%= yield %>
-    </div>
+    <%= render 'shared/flash_messages' %>
+    <%= yield %>
     <%= javascript_include_tag "application" %>
   </body>
 </html>
