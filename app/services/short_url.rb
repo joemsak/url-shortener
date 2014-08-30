@@ -4,7 +4,7 @@ class ShortUrl
   end
 
   def self.for(url)
-     ENV['HOSTNAME'] + url.shortened_hash
+    ENV['HOSTNAME'] + url.shortened_hash
   end
 
   private
