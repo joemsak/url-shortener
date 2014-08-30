@@ -39,12 +39,8 @@ class NewUrlPage
     'form#new_url'
   end
 
-  def shortened_url_css
-    '#shortened_url'
-  end
-
-  def add_another_css
-    '#add_another'
+  def shortened_url_name
+    'result_url'
   end
 
   def add_another_text
